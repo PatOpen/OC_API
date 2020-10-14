@@ -1408,7 +1408,7 @@ true posix/WET
 false posix/Zulu
 true posixrules
 </TimeZones>
-      <StartupTime>1602568031</StartupTime>
+      <StartupTime>1602660923</StartupTime>
     </root>
     <database id="2" parent="1" name="OC_Blog">
       <ObjectId>16385</ObjectId>
@@ -1421,7 +1421,7 @@ true posixrules
     <database id="4" parent="1" name="bilemo">
       <ObjectId>16701</ObjectId>
       <Owner>lefumier</Owner>
-      <IntrospectionStateNumber>1647</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1658</IntrospectionStateNumber>
       <Current>1</Current>
     </database>
     <database id="5" parent="1" name="lefumier">
@@ -1491,7 +1491,7 @@ true posixrules
       <Comment>standard public schema</Comment>
       <StateNumber>275</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>1648</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1659</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <access-method id="21" parent="4" name="heap">
@@ -1624,7 +1624,7 @@ true posixrules
     <table id="44" parent="20" name="user">
       <ObjectId>16749</ObjectId>
       <Owner>lefumier</Owner>
-      <StateNumber>1644</StateNumber>
+      <StateNumber>1649</StateNumber>
     </table>
     <column id="45" parent="38" name="id">
       <Position>1</Position>
@@ -1903,32 +1903,53 @@ color_id</ColNames>
       <StateNumber>1644</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="84" parent="44" name="user_pkey">
+    <column id="84" parent="44" name="firstname">
+      <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1649</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="85" parent="44" name="lastname">
+      <Position>7</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1649</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="86" parent="44" name="created_at">
+      <Position>8</Position>
+      <DataType>timestamp(0)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1649</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="87" parent="44" name="user_pkey">
       <ObjectId>16755</ObjectId>
       <StateNumber>1644</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <index id="85" parent="44" name="uniq_8d93d649e7927c74">
+    <index id="88" parent="44" name="uniq_8d93d649e7927c74">
       <ObjectId>16757</ObjectId>
       <StateNumber>1644</StateNumber>
       <ColNames>email</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="86" parent="44" name="idx_8d93d6499395c3f3">
+    <index id="89" parent="44" name="idx_8d93d6499395c3f3">
       <ObjectId>16758</ObjectId>
       <StateNumber>1644</StateNumber>
       <ColNames>customer_id</ColNames>
     </index>
-    <key id="87" parent="44" name="user_pkey">
+    <key id="90" parent="44" name="user_pkey">
       <ObjectId>16756</ObjectId>
       <StateNumber>1644</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>user_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="88" parent="44" name="fk_8d93d6499395c3f3">
+    <foreign-key id="91" parent="44" name="fk_8d93d6499395c3f3">
       <ObjectId>16774</ObjectId>
       <StateNumber>1644</StateNumber>
       <ColNames>customer_id</ColNames>

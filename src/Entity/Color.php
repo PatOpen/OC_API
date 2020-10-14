@@ -27,11 +27,11 @@ class Color
     /**
      * @ORM\ManyToMany(targetEntity=Product::class, mappedBy="color")
      */
-    private $productId;
+    private $products;
 
     public function __construct()
     {
-        $this->productId = new ArrayCollection();
+        $this->products = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -54,26 +54,26 @@ class Color
     /**
      * @return Collection|Product[]
      */
-    public function getProductId(): Collection
+    public function getProducts(): Collection
     {
-        return $this->productId;
+        return $this->products;
     }
 
-    public function addProductId(Product $productId): self
+    public function addProduct(Product $product): self
     {
-        if (!$this->productId->contains($productId)) {
-            $this->productId[] = $productId;
-            $productId->addColor($this);
+        if (!$this->products->contains($product)) {
+            $this->products[] = $product;
+            $product->addColor($this);
         }
 
         return $this;
     }
 
-    public function removeProductId(Product $productId): self
+    public function removeProduct(Product $product): self
     {
-        if ($this->productId->contains($productId)) {
-            $this->productId->removeElement($productId);
-            $productId->removeColor($this);
+        if ($this->products->contains($product)) {
+            $this->products->removeElement($product);
+            $product->removeColor($this);
         }
 
         return $this;

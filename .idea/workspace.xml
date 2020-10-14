@@ -2,19 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2aed3a1-eb41-4f24-9354-fcdf01f782b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.env.test" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_06_10_2020_17_34.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/commandlinetools/schemas/frameworkDescriptionVersion1.1.4.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/console" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/phpunit" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phpunit.xml.dist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201013181743.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8b6948ad-ffd2-4a89-9a0b-1de1e58c836d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8b6948ad-ffd2-4a89-9a0b-1de1e58c836d.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8b6948ad-ffd2-4a89-9a0b-1de1e58c836d/storage_v2/_src_/database/bilemo.ojE1rQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8b6948ad-ffd2-4a89-9a0b-1de1e58c836d/storage_v2/_src_/database/bilemo.ojE1rQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Color.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Color.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,6 +123,8 @@
       <path value="$PROJECT_DIR$/vendor/lexik/jwt-authentication-bundle" />
       <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
       <path value="$PROJECT_DIR$/vendor/namshi/jose" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iSeSA2wGD6lxNefxm4XTVcgTui" />
@@ -165,7 +166,9 @@
       <workItem from="1602340307582" duration="1976000" />
       <workItem from="1602482752032" duration="4047000" />
       <workItem from="1602569804803" duration="1693000" />
-      <workItem from="1602579390462" duration="8299000" />
+      <workItem from="1602579390462" duration="13542000" />
+      <workItem from="1602615331829" duration="2577000" />
+      <workItem from="1602661265793" duration="2166000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1602163497638</created>
@@ -174,7 +177,21 @@
       <option name="project" value="LOCAL" />
       <updated>1602163497638</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="create database and entities">
+      <created>1602601797593</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1602601797593</updated>
+    </task>
+    <task id="LOCAL-00003" summary="create database and entities">
+      <created>1602601854632</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1602601854632</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,17 +199,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init project" />
-    <option name="LAST_COMMIT_MESSAGE" value="init project" />
+    <MESSAGE value="create database and entities" />
+    <option name="LAST_COMMIT_MESSAGE" value="create database and entities" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2355" y="159" width="802" height="664" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602483652809">
+    <state x="2355" y="159" width="802" height="664" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602618731461">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2355" y="159" width="802" height="664" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602483652809" />
-    <state x="2095" y="87" width="1258" height="905" key="CommitChangelistDialog2" timestamp="1602163497323">
+    <state x="2355" y="159" width="802" height="664" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602618731461" />
+    <state x="2095" y="87" width="1258" height="905" key="CommitChangelistDialog2" timestamp="1602601854565">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2095" y="87" width="1258" height="905" key="CommitChangelistDialog2/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602163497323" />
+    <state x="2095" y="87" width="1258" height="905" key="CommitChangelistDialog2/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602601854565" />
     <state x="2616" y="462" width="520" height="154" key="ComposerInitDialogKey" timestamp="1602008713529">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

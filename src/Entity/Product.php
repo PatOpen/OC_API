@@ -37,14 +37,14 @@ class Product
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Color::class, inversedBy="productId", cascade={"persist","remove"})
-     */
-    private $color;
-
-    /**
      * @ORM\OneToMany(targetEntity=Image::class, mappedBy="productImageId", cascade={"persist", "remove"})
      */
     private $image;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Color::class, inversedBy="products")
+     */
+    private $color;
 
     public function __construct()
     {
@@ -94,32 +94,6 @@ class Product
     }
 
     /**
-     * @return Collection|Color[]
-     */
-    public function getColor(): Collection
-    {
-        return $this->color;
-    }
-
-    public function addColor(Color $color): self
-    {
-        if (!$this->color->contains($color)) {
-            $this->color[] = $color;
-        }
-
-        return $this;
-    }
-
-    public function removeColor(Color $color): self
-    {
-        if ($this->color->contains($color)) {
-            $this->color->removeElement($color);
-        }
-
-        return $this;
-    }
-
-    /**
      * @return Collection|Image[]
      */
     public function getImage(): Collection
@@ -145,6 +119,32 @@ class Product
             if ($image->getProductImageId() === $this) {
                 $image->setProductImageId(null);
             }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Color[]
+     */
+    public function getColor(): Collection
+    {
+        return $this->color;
+    }
+
+    public function addColor(Color $color): self
+    {
+        if (!$this->color->contains($color)) {
+            $this->color[] = $color;
+        }
+
+        return $this;
+    }
+
+    public function removeColor(Color $color): self
+    {
+        if ($this->color->contains($color)) {
+            $this->color->removeElement($color);
         }
 
         return $this;
