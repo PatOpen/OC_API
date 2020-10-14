@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2aed3a1-eb41-4f24-9354-fcdf01f782b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201013181743.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8b6948ad-ffd2-4a89-9a0b-1de1e58c836d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8b6948ad-ffd2-4a89-9a0b-1de1e58c836d.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8b6948ad-ffd2-4a89-9a0b-1de1e58c836d/storage_v2/_src_/database/bilemo.ojE1rQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8b6948ad-ffd2-4a89-9a0b-1de1e58c836d/storage_v2/_src_/database/bilemo.ojE1rQ/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="e2aed3a1-eb41-4f24-9354-fcdf01f782b0" name="Default Changelist" comment="create database and entities">
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201013195116.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/ProductTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/UserTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Color.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Color.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,6 +143,32 @@
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RunManager" selected="PHPUnit.UserTest.testGetRoles">
+    <configuration name="UserTest.testGetEmail" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.4" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="App\Tests\Unit\UserTest" file="$PROJECT_DIR$/tests/Unit/UserTest.php" method="testGetEmail" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="UserTest.testGetRoles" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.4" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="App\Tests\Unit\UserTest" file="$PROJECT_DIR$/tests/Unit/UserTest.php" method="testGetRoles" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.UserTest.testGetRoles" />
+        <item itemvalue="PHPUnit.UserTest.testGetEmail" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -168,7 +187,7 @@
       <workItem from="1602569804803" duration="1693000" />
       <workItem from="1602579390462" duration="13542000" />
       <workItem from="1602615331829" duration="2577000" />
-      <workItem from="1602661265793" duration="2166000" />
+      <workItem from="1602661265793" duration="9357000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1602163497638</created>
@@ -191,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602601854632</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="create fixtures">
+      <created>1602664612747</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1602664612747</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,17 +226,34 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init project" />
     <MESSAGE value="create database and entities" />
-    <option name="LAST_COMMIT_MESSAGE" value="create database and entities" />
+    <MESSAGE value="create fixtures" />
+    <option name="LAST_COMMIT_MESSAGE" value="create fixtures" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="2610" y="278" width="620" height="519" key="#CLI_Interpreters" timestamp="1602666437766">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2610" y="278" width="620" height="519" key="#CLI_Interpreters/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602666437766" />
+    <state x="2525" y="195" width="703" height="731" key="#PHP" timestamp="1602680043376">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2525" y="195" width="703" height="731" key="#PHP/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602680043376" />
+    <state x="2561" y="278" width="786" height="519" key="#Test_Frameworks" timestamp="1602666585806">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2561" y="278" width="786" height="519" key="#Test_Frameworks/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602666585806" />
     <state x="2355" y="159" width="802" height="664" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602618731461">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2355" y="159" width="802" height="664" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602618731461" />
-    <state x="2095" y="87" width="1258" height="905" key="CommitChangelistDialog2" timestamp="1602601854565">
+    <state x="2678" y="355" width="395" height="369" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602682442227">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2095" y="87" width="1258" height="905" key="CommitChangelistDialog2/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602601854565" />
+    <state x="2678" y="355" width="395" height="369" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602682442227" />
+    <state x="2095" y="87" width="1258" height="905" key="CommitChangelistDialog2" timestamp="1602664612506">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2095" y="87" width="1258" height="905" key="CommitChangelistDialog2/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602664612506" />
     <state x="2616" y="462" width="520" height="154" key="ComposerInitDialogKey" timestamp="1602008713529">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -219,18 +262,42 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="1951" y="92" width="1538" height="892" key="DiffContextDialog/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602163365364" />
+    <state x="2716" y="320" width="311" height="436" key="EnvironmentVariablesDialog" timestamp="1602666606489">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2716" y="320" width="311" height="436" key="EnvironmentVariablesDialog/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602666606489" />
     <state x="2658" y="355" key="FileChooserDialogImpl" timestamp="1602183959838">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2658" y="355" key="FileChooserDialogImpl/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602183959838" />
+    <state width="1872" height="279" key="GridCell.Tab.0.bottom" timestamp="1602680074010">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1872" height="279" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602680074010" />
+    <state width="1872" height="279" key="GridCell.Tab.0.center" timestamp="1602680074010">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1872" height="279" key="GridCell.Tab.0.center/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602680074010" />
+    <state width="1872" height="279" key="GridCell.Tab.0.left" timestamp="1602680074010">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1872" height="279" key="GridCell.Tab.0.left/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602680074010" />
+    <state width="1872" height="279" key="GridCell.Tab.0.right" timestamp="1602680074010">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1872" height="279" key="GridCell.Tab.0.right/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602680074010" />
+    <state x="2542" y="276" width="667" height="527" key="NewPhpClassDialog" timestamp="1602682386272">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2542" y="276" width="667" height="527" key="NewPhpClassDialog/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602682386272" />
     <state x="2110" y="263" width="1186" height="656" key="SettingsEditor" timestamp="1602009010266">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2110" y="263" width="1186" height="656" key="SettingsEditor/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602009010266" />
-    <state x="2575" y="336" width="602" height="407" key="Vcs.Push.Dialog.v2" timestamp="1602163514557">
+    <state x="2300" y="336" width="877" height="624" key="Vcs.Push.Dialog.v2" timestamp="1602664641224">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2575" y="336" width="602" height="407" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602163514557" />
+    <state x="2300" y="336" width="877" height="624" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602664641224" />
     <state x="2660" y="465" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602163711798">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
