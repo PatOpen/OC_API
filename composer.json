@@ -3,7 +3,7 @@
     "license": "proprietary",
     "minimum-stability": "dev",
     "require": {
-        "php": ">=7.2.5",
+        "php": ">=7.4",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "api-platform/core": "2.6.x-dev",
@@ -30,9 +30,13 @@
         "symfony/yaml": "5.2.*"
     },
     "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^3.3@dev",
         "fzaninotto/faker": "^1.9@dev",
+        "symfony/browser-kit": "5.2.*",
+        "symfony/css-selector": "5.2.*",
         "symfony/maker-bundle": "^1.0@dev",
-        "symfony/phpunit-bridge": "^5.2@dev"
+        "symfony/phpunit-bridge": "^5.2@dev",
+      "ext-json": "*"
     },
     "config": {
         "optimize-autoloader": true,
