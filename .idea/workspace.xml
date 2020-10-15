@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2aed3a1-eb41-4f24-9354-fcdf01f782b0" name="Default Changelist" comment="create database and entities">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201013195116.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Unit/ProductTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Unit/UserTest.php" afterDir="false" />
+    <list default="true" id="e2aed3a1-eb41-4f24-9354-fcdf01f782b0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tests/Func/AbstractEndPoint.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Func/UserTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +120,9 @@
       <path value="$PROJECT_DIR$/vendor/namshi/jose" />
       <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iSeSA2wGD6lxNefxm4XTVcgTui" />
@@ -187,7 +192,8 @@
       <workItem from="1602569804803" duration="1693000" />
       <workItem from="1602579390462" duration="13542000" />
       <workItem from="1602615331829" duration="2577000" />
-      <workItem from="1602661265793" duration="9357000" />
+      <workItem from="1602661265793" duration="10012000" />
+      <workItem from="1602745179583" duration="6357000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1602163497638</created>
@@ -217,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602664612747</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="create unit tests">
+      <created>1602690778814</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1602690778814</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,7 +240,8 @@
     <MESSAGE value="init project" />
     <MESSAGE value="create database and entities" />
     <MESSAGE value="create fixtures" />
-    <option name="LAST_COMMIT_MESSAGE" value="create fixtures" />
+    <MESSAGE value="create unit tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="create unit tests" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2610" y="278" width="620" height="519" key="#CLI_Interpreters" timestamp="1602666437766">
@@ -246,14 +260,18 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2355" y="159" width="802" height="664" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602618731461" />
+    <state x="2659" y="376" width="425" height="325" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1602753581857">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2659" y="376" width="425" height="325" key="#com.intellij.ide.util.TreeClassChooserDialog/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602753581857" />
     <state x="2678" y="355" width="395" height="369" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602682442227">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2678" y="355" width="395" height="369" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602682442227" />
-    <state x="2095" y="87" width="1258" height="905" key="CommitChangelistDialog2" timestamp="1602664612506">
+    <state x="2095" y="87" width="1258" height="905" key="CommitChangelistDialog2" timestamp="1602690778732">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2095" y="87" width="1258" height="905" key="CommitChangelistDialog2/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602664612506" />
+    <state x="2095" y="87" width="1258" height="905" key="CommitChangelistDialog2/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602690778732" />
     <state x="2616" y="462" width="520" height="154" key="ComposerInitDialogKey" timestamp="1602008713529">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -270,26 +288,26 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2658" y="355" key="FileChooserDialogImpl/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602183959838" />
-    <state width="1872" height="279" key="GridCell.Tab.0.bottom" timestamp="1602680074010">
+    <state width="1872" height="279" key="GridCell.Tab.0.bottom" timestamp="1602707401384">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1872" height="279" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602680074010" />
-    <state width="1872" height="279" key="GridCell.Tab.0.center" timestamp="1602680074010">
+    <state width="1872" height="279" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602707401384" />
+    <state width="1872" height="279" key="GridCell.Tab.0.center" timestamp="1602707401384">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1872" height="279" key="GridCell.Tab.0.center/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602680074010" />
-    <state width="1872" height="279" key="GridCell.Tab.0.left" timestamp="1602680074010">
+    <state width="1872" height="279" key="GridCell.Tab.0.center/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602707401384" />
+    <state width="1872" height="279" key="GridCell.Tab.0.left" timestamp="1602707401384">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1872" height="279" key="GridCell.Tab.0.left/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602680074010" />
-    <state width="1872" height="279" key="GridCell.Tab.0.right" timestamp="1602680074010">
+    <state width="1872" height="279" key="GridCell.Tab.0.left/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602707401384" />
+    <state width="1872" height="279" key="GridCell.Tab.0.right" timestamp="1602707401384">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1872" height="279" key="GridCell.Tab.0.right/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602680074010" />
-    <state x="2542" y="276" width="667" height="527" key="NewPhpClassDialog" timestamp="1602682386272">
+    <state width="1872" height="279" key="GridCell.Tab.0.right/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602707401384" />
+    <state x="2542" y="276" width="667" height="527" key="NewPhpClassDialog" timestamp="1602753632940">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2542" y="276" width="667" height="527" key="NewPhpClassDialog/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602682386272" />
+    <state x="2542" y="276" width="667" height="527" key="NewPhpClassDialog/1920.0.1920.1080/0.28.1920.1024@1920.0.1920.1080" timestamp="1602753632940" />
     <state x="2110" y="263" width="1186" height="656" key="SettingsEditor" timestamp="1602009010266">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
