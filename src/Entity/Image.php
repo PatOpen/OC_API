@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ImageRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=ImageRepository::class)
@@ -15,17 +16,19 @@ class Image
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+	private ?int $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"product:read"})
      */
-    private $imageName;
+	private ?string $imageName;
 
     /**
      * @ORM\ManyToOne(targetEntity=Product::class, inversedBy="image")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $productImageId;
+	private ?Product $product;
 
     public function getId(): ?int
     {
@@ -44,14 +47,14 @@ class Image
         return $this;
     }
 
-    public function getProductImageId(): ?Product
+    public function getProduct(): ?Product
     {
-        return $this->productImageId;
+        return $this->product;
     }
 
-    public function setProductImageId(?Product $productImageId): self
+    public function setProduct(?Product $product): self
     {
-        $this->productImageId = $productImageId;
+        $this->product = $product;
 
         return $this;
     }

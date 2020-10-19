@@ -7,9 +7,18 @@ use App\Repository\ProductRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * @ApiResource()
+ * @ApiResource(
+ *     normalizationContext={"groups"={"product:read"}},
+ *     collectionOperations={
+ *          "get"
+ *     },
+ *     itemOperations={
+ *          "get"
+ *     }
+ * )
  * @ORM\Entity(repositoryClass=ProductRepository::class)
  */
 class Product
@@ -18,33 +27,45 @@ class Product
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"product:read"})
      */
-    private $id;
+	private ?int $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"product:read"})
      */
-    private $brand;
+	private ?string $brand;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"product:read"})
      */
-    private $description;
+	private ?string $name;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"product:read"})
      */
-    private $name;
+	private ?string $description;
 
     /**
-     * @ORM\OneToMany(targetEntity=Image::class, mappedBy="productImageId", cascade={"persist", "remove"})
+     * @ORM\Column(type="float", nullable=true)
+     * @Groups({"product:read"})
      */
-    private $image;
+	private ?float $price;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Color::class, inversedBy="products")
+     * @ORM\OneToMany(targetEntity=Color::class, mappedBy="product", orphanRemoval=true, cascade={"persist", "remove"})
+     * @Groups({"product:read"})
      */
-    private $color;
+	private Collection $color;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Image::class, mappedBy="product", orphanRemoval=true, cascade={"persist", "remove"})
+     * @Groups({"product:read"})
+     */
+	private Collection $image;
 
     public function __construct()
     {
@@ -69,18 +90,6 @@ class Product
         return $this;
     }
 
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(string $description): self
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
     public function getName(): ?string
     {
         return $this->name;
@@ -93,33 +102,26 @@ class Product
         return $this;
     }
 
-    /**
-     * @return Collection|Image[]
-     */
-    public function getImage(): Collection
+    public function getDescription(): ?string
     {
-        return $this->image;
+        return $this->description;
     }
 
-    public function addImage(Image $image): self
+    public function setDescription(string $description): self
     {
-        if (!$this->image->contains($image)) {
-            $this->image[] = $image;
-            $image->setProductImageId($this);
-        }
+        $this->description = $description;
 
         return $this;
     }
 
-    public function removeImage(Image $image): self
+    public function getPrice(): ?float
     {
-        if ($this->image->contains($image)) {
-            $this->image->removeElement($image);
-            // set the owning side to null (unless already changed)
-            if ($image->getProductImageId() === $this) {
-                $image->setProductImageId(null);
-            }
-        }
+        return $this->price;
+    }
+
+    public function setPrice(?float $price): self
+    {
+        $this->price = $price;
 
         return $this;
     }
@@ -136,6 +138,7 @@ class Product
     {
         if (!$this->color->contains($color)) {
             $this->color[] = $color;
+            $color->setProduct($this);
         }
 
         return $this;
@@ -145,6 +148,41 @@ class Product
     {
         if ($this->color->contains($color)) {
             $this->color->removeElement($color);
+            // set the owning side to null (unless already changed)
+            if ($color->getProduct() === $this) {
+                $color->setProduct(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Image[]
+     */
+    public function getImage(): Collection
+    {
+        return $this->image;
+    }
+
+    public function addImage(Image $image): self
+    {
+        if (!$this->image->contains($image)) {
+            $this->image[] = $image;
+            $image->setProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function removeImage(Image $image): self
+    {
+        if ($this->image->contains($image)) {
+            $this->image->removeElement($image);
+            // set the owning side to null (unless already changed)
+            if ($image->getProduct() === $this) {
+                $image->setProduct(null);
+            }
         }
 
         return $this;

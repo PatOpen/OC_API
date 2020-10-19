@@ -5,7 +5,7 @@ namespace App\DataFixtures;
 use App\Entity\Color;
 use App\Entity\Customer;
 use App\Entity\Product;
-use App\Entity\User;
+use App\Entity\Users;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
@@ -16,7 +16,7 @@ class AppFixtures extends Fixture
 	/**
 	 * @var UserPasswordEncoderInterface
 	 */
-	private $encoder;
+	private UserPasswordEncoderInterface $encoder;
 
 	public function __construct( UserPasswordEncoderInterface $encoder )
 	{
@@ -36,12 +36,12 @@ class AppFixtures extends Fixture
 
 			for ( $u = 0; $u <= mt_rand(1,5) ; $u ++ )
 			{
-				$user = new User();
+				$user = new Users();
 
 				$passHash = $this->encoder->encodePassword( $user, 'password' );
 
 				$user->setCustomer($customer)
-					 ->setEmail( $faker->email )
+				     ->setEmail( $faker->email )
 				     ->setPassword( $passHash )
 				     ->setFirstname( $faker->firstName )
 				     ->setLastname( $faker->lastName );
@@ -50,22 +50,24 @@ class AppFixtures extends Fixture
 			}
 		}
 
-		for ($i = 0 ; $i <= 10 ; $i++){
-			$color = new Color();
-
-			$color->setName($faker->colorName);
-
-			$manager->persist($color);
-		}
-
 		for ($p = 0 ; $p < 15 ; $p++){
 			$product = new Product();
 
 			$product->setBrand($faker->company)
-					->setDescription($faker->text(100))
-					->setName($faker->city);
+			        ->setDescription($faker->text(100))
+			        ->setName($faker->city)
+			        ->setPrice($faker->randomFloat(2, 200, 1000));
 
 			$manager->persist($product);
+
+			for ($i = 0 ; $i <= 3 ; $i++){
+				$color = new Color();
+
+				$color->setColor($faker->colorName)
+					  ->setProduct($product);
+
+				$manager->persist($color);
+			}
 		}
 
 		$manager->flush();

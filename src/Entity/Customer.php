@@ -2,85 +2,101 @@
 
 namespace App\Entity;
 
-use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\CustomerRepository;
+use DateTime;
+use DateTimeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * @ApiResource()
  * @ORM\Entity(repositoryClass=CustomerRepository::class)
  */
 class Customer
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
-    private $id;
+	/**
+	 * @ORM\Id
+	 * @ORM\GeneratedValue
+	 * @ORM\Column(type="integer")
+	 */
+	private ?int $id;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $name;
+	/**
+	 * @ORM\Column(type="string", length=255)
+	 * @Groups({"users:read"})
+	 */
+	private ?string $name;
 
-    /**
-     * @ORM\OneToMany(targetEntity=User::class, mappedBy="customer")
-     */
-    private $users;
+	/**
+	 * @ORM\Column(type="datetime")
+	 */
+	private DateTime $createdAt;
 
-    public function __construct()
-    {
-        $this->users = new ArrayCollection();
-    }
+	/**
+	 * @ORM\OneToMany(targetEntity=Users::class, mappedBy="customer", orphanRemoval=true, cascade={"persist", "remove"})
+	 */
+	private Collection $user;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+	public function __construct()
+	{
+		$this->createdAt = new DateTime;
+		$this->user      = new ArrayCollection();
+	}
 
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
+	public function getId(): ?int
+	{
+		return $this->id;
+	}
 
-    public function setName(string $name): self
-    {
-        $this->name = $name;
+	public function getName(): ?string
+	{
+		return $this->name;
+	}
 
-        return $this;
-    }
+	public function setName( string $name ): self
+	{
+		$this->name = $name;
 
-    /**
-     * @return Collection|User[]
-     */
-    public function getUsers(): Collection
-    {
-        return $this->users;
-    }
+		return $this;
+	}
 
-    public function addUser(User $user): self
-    {
-        if (!$this->users->contains($user)) {
-            $this->users[] = $user;
-            $user->setCustomer($this);
-        }
+	public function getCreatedAt(): ?DateTimeInterface
+	{
+		return $this->createdAt;
+	}
 
-        return $this;
-    }
+	/**
+	 * @return Collection|Users[]
+	 */
+	public function getUser(): Collection
+	{
+		return $this->user;
+	}
 
-    public function removeUser(User $user): self
-    {
-        if ($this->users->contains($user)) {
-            $this->users->removeElement($user);
-            // set the owning side to null (unless already changed)
-            if ($user->getCustomer() === $this) {
-                $user->setCustomer(null);
-            }
-        }
+	public function addUser( Users $user ): self
+	{
+		if ( ! $this->user->contains( $user ) )
+		{
+			$this->user[] = $user;
+			$user->setCustomer( $this );
+		}
 
-        return $this;
-    }
+		return $this;
+	}
+
+	public function removeUser( Users $user ): self
+	{
+		if ( $this->user->contains( $user ) )
+		{
+			$this->user->removeElement( $user );
+			// set the owning side to null (unless already changed)
+			if ( $user->getCustomer() === $this )
+			{
+				$user->setCustomer( null );
+			}
+		}
+
+		return $this;
+	}
 }
