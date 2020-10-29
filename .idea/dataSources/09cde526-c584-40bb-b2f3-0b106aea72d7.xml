@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="Bilemo">
+<dataSource name="ocbilemo@localhost">
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.19">
     <root id="1">
       <ServerVersion>12.4</ServerVersion>
@@ -1408,7 +1408,7 @@ true posix/WET
 false posix/Zulu
 true posixrules
 </TimeZones>
-      <StartupTime>1602660923</StartupTime>
+      <StartupTime>1603098960</StartupTime>
     </root>
     <database id="2" parent="1" name="OC_Blog">
       <ObjectId>16385</ObjectId>
@@ -1421,52 +1421,56 @@ true posixrules
     <database id="4" parent="1" name="bilemo">
       <ObjectId>16701</ObjectId>
       <Owner>lefumier</Owner>
-      <IntrospectionStateNumber>1658</IntrospectionStateNumber>
-      <Current>1</Current>
     </database>
     <database id="5" parent="1" name="lefumier">
       <ObjectId>16386</ObjectId>
       <Owner>lefumier</Owner>
     </database>
-    <database id="6" parent="1" name="postgres">
+    <database id="6" parent="1" name="ocbilemo">
+      <ObjectId>17076</ObjectId>
+      <Owner>lefumier</Owner>
+      <IntrospectionStateNumber>1885</IntrospectionStateNumber>
+      <Current>1</Current>
+    </database>
+    <database id="7" parent="1" name="postgres">
       <ObjectId>13471</ObjectId>
       <Comment>default administrative connection database</Comment>
       <Owner>postgres</Owner>
     </database>
-    <database id="7" parent="1" name="snowtricks">
+    <database id="8" parent="1" name="snowtricks">
       <ObjectId>16516</ObjectId>
       <Owner>lefumier</Owner>
     </database>
-    <role id="8" parent="1" name="lefumier">
+    <role id="9" parent="1" name="lefumier">
       <ObjectId>16384</ObjectId>
       <SuperRole>1</SuperRole>
       <CanLogin>1</CanLogin>
     </role>
-    <role id="9" parent="1" name="pg_execute_server_program">
+    <role id="10" parent="1" name="pg_execute_server_program">
       <ObjectId>4571</ObjectId>
     </role>
-    <role id="10" parent="1" name="pg_monitor">
+    <role id="11" parent="1" name="pg_monitor">
       <ObjectId>3373</ObjectId>
     </role>
-    <role id="11" parent="1" name="pg_read_all_settings">
+    <role id="12" parent="1" name="pg_read_all_settings">
       <ObjectId>3374</ObjectId>
     </role>
-    <role id="12" parent="1" name="pg_read_all_stats">
+    <role id="13" parent="1" name="pg_read_all_stats">
       <ObjectId>3375</ObjectId>
     </role>
-    <role id="13" parent="1" name="pg_read_server_files">
+    <role id="14" parent="1" name="pg_read_server_files">
       <ObjectId>4569</ObjectId>
     </role>
-    <role id="14" parent="1" name="pg_signal_backend">
+    <role id="15" parent="1" name="pg_signal_backend">
       <ObjectId>4200</ObjectId>
     </role>
-    <role id="15" parent="1" name="pg_stat_scan_tables">
+    <role id="16" parent="1" name="pg_stat_scan_tables">
       <ObjectId>3377</ObjectId>
     </role>
-    <role id="16" parent="1" name="pg_write_server_files">
+    <role id="17" parent="1" name="pg_write_server_files">
       <ObjectId>4570</ObjectId>
     </role>
-    <role id="17" parent="1" name="postgres">
+    <role id="18" parent="1" name="postgres">
       <ObjectId>10</ObjectId>
       <SuperRole>1</SuperRole>
       <CreateDb>1</CreateDb>
@@ -1475,33 +1479,33 @@ true posixrules
       <Replication>1</Replication>
       <BypassRls>1</BypassRls>
     </role>
-    <schema id="18" parent="4" name="information_schema">
+    <schema id="19" parent="6" name="information_schema">
       <ObjectId>13171</ObjectId>
       <StateNumber>281</StateNumber>
       <Owner>postgres</Owner>
     </schema>
-    <schema id="19" parent="4" name="pg_catalog">
+    <schema id="20" parent="6" name="pg_catalog">
       <ObjectId>11</ObjectId>
       <Comment>system catalog schema</Comment>
       <StateNumber>274</StateNumber>
       <Owner>postgres</Owner>
     </schema>
-    <schema id="20" parent="4" name="public">
+    <schema id="21" parent="6" name="public">
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
       <StateNumber>275</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>1659</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1886</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
-    <access-method id="21" parent="4" name="heap">
+    <access-method id="22" parent="6" name="heap">
       <ObjectId>2</ObjectId>
       <Comment>heap table access method</Comment>
       <StateNumber>1</StateNumber>
       <Handler>pg_catalog.heap_tableam_handler</Handler>
       <HandlerId>3</HandlerId>
     </access-method>
-    <access-method id="22" parent="4" name="btree">
+    <access-method id="23" parent="6" name="btree">
       <ObjectId>403</ObjectId>
       <Comment>b-tree index access method</Comment>
       <StateNumber>1</StateNumber>
@@ -1509,7 +1513,7 @@ true posixrules
       <HandlerId>330</HandlerId>
       <Type>index</Type>
     </access-method>
-    <access-method id="23" parent="4" name="hash">
+    <access-method id="24" parent="6" name="hash">
       <ObjectId>405</ObjectId>
       <Comment>hash index access method</Comment>
       <StateNumber>1</StateNumber>
@@ -1517,7 +1521,7 @@ true posixrules
       <HandlerId>331</HandlerId>
       <Type>index</Type>
     </access-method>
-    <access-method id="24" parent="4" name="gist">
+    <access-method id="25" parent="6" name="gist">
       <ObjectId>783</ObjectId>
       <Comment>GiST index access method</Comment>
       <StateNumber>1</StateNumber>
@@ -1525,7 +1529,7 @@ true posixrules
       <HandlerId>332</HandlerId>
       <Type>index</Type>
     </access-method>
-    <access-method id="25" parent="4" name="gin">
+    <access-method id="26" parent="6" name="gin">
       <ObjectId>2742</ObjectId>
       <Comment>GIN index access method</Comment>
       <StateNumber>1</StateNumber>
@@ -1533,7 +1537,7 @@ true posixrules
       <HandlerId>333</HandlerId>
       <Type>index</Type>
     </access-method>
-    <access-method id="26" parent="4" name="spgist">
+    <access-method id="27" parent="6" name="spgist">
       <ObjectId>4000</ObjectId>
       <Comment>SP-GiST index access method</Comment>
       <StateNumber>1</StateNumber>
@@ -1541,7 +1545,7 @@ true posixrules
       <HandlerId>334</HandlerId>
       <Type>index</Type>
     </access-method>
-    <access-method id="27" parent="4" name="brin">
+    <access-method id="28" parent="6" name="brin">
       <ObjectId>3580</ObjectId>
       <Comment>block range index (BRIN) access method</Comment>
       <StateNumber>1</StateNumber>
@@ -1549,7 +1553,7 @@ true posixrules
       <HandlerId>335</HandlerId>
       <Type>index</Type>
     </access-method>
-    <extension id="28" parent="4" name="plpgsql">
+    <extension id="29" parent="6" name="plpgsql">
       <ObjectId>13457</ObjectId>
       <Comment>PL/pgSQL procedural language</Comment>
       <StateNumber>436</StateNumber>
@@ -1557,403 +1561,366 @@ true posixrules
       <SchemaName>pg_catalog</SchemaName>
       <SchemaId>11</SchemaId>
     </extension>
-    <language id="29" parent="4" name="c"/>
-    <language id="30" parent="4" name="internal"/>
-    <language id="31" parent="4" name="plpgsql"/>
-    <language id="32" parent="4" name="sql"/>
-    <sequence id="33" parent="20" name="color_id_seq">
-      <ObjectId>16708</ObjectId>
+    <language id="30" parent="6" name="c"/>
+    <language id="31" parent="6" name="internal"/>
+    <language id="32" parent="6" name="plpgsql"/>
+    <language id="33" parent="6" name="sql"/>
+    <sequence id="34" parent="21" name="color_id_seq">
+      <ObjectId>17083</ObjectId>
       <Owner>lefumier</Owner>
-      <StateNumber>1644</StateNumber>
+      <StateNumber>1884</StateNumber>
       <DataType>bigint|0s</DataType>
     </sequence>
-    <sequence id="34" parent="20" name="customer_id_seq">
-      <ObjectId>16710</ObjectId>
+    <sequence id="35" parent="21" name="customer_id_seq">
+      <ObjectId>17085</ObjectId>
       <Owner>lefumier</Owner>
-      <StateNumber>1644</StateNumber>
+      <StateNumber>1884</StateNumber>
       <DataType>bigint|0s</DataType>
     </sequence>
-    <sequence id="35" parent="20" name="image_id_seq">
-      <ObjectId>16712</ObjectId>
+    <sequence id="36" parent="21" name="image_id_seq">
+      <ObjectId>17087</ObjectId>
       <Owner>lefumier</Owner>
-      <StateNumber>1644</StateNumber>
+      <StateNumber>1884</StateNumber>
       <DataType>bigint|0s</DataType>
     </sequence>
-    <sequence id="36" parent="20" name="product_id_seq">
-      <ObjectId>16714</ObjectId>
+    <sequence id="37" parent="21" name="product_id_seq">
+      <ObjectId>17089</ObjectId>
       <Owner>lefumier</Owner>
-      <StateNumber>1644</StateNumber>
+      <StateNumber>1884</StateNumber>
       <DataType>bigint|0s</DataType>
     </sequence>
-    <sequence id="37" parent="20" name="user_id_seq">
-      <ObjectId>16716</ObjectId>
+    <sequence id="38" parent="21" name="users_id_seq">
+      <ObjectId>17091</ObjectId>
       <Owner>lefumier</Owner>
-      <StateNumber>1644</StateNumber>
+      <StateNumber>1884</StateNumber>
       <DataType>bigint|0s</DataType>
     </sequence>
-    <table id="38" parent="20" name="color">
-      <ObjectId>16718</ObjectId>
+    <table id="39" parent="21" name="color">
+      <ObjectId>17093</ObjectId>
       <Owner>lefumier</Owner>
-      <StateNumber>1644</StateNumber>
+      <StateNumber>1884</StateNumber>
     </table>
-    <table id="39" parent="20" name="customer">
-      <ObjectId>16723</ObjectId>
+    <table id="40" parent="21" name="customer">
+      <ObjectId>17099</ObjectId>
       <Owner>lefumier</Owner>
-      <StateNumber>1644</StateNumber>
+      <StateNumber>1884</StateNumber>
     </table>
-    <table id="40" parent="20" name="doctrine_migration_versions">
-      <ObjectId>16702</ObjectId>
+    <table id="41" parent="21" name="doctrine_migration_versions">
+      <ObjectId>17077</ObjectId>
       <Owner>lefumier</Owner>
-      <StateNumber>1643</StateNumber>
+      <StateNumber>1883</StateNumber>
     </table>
-    <table id="41" parent="20" name="image">
-      <ObjectId>16728</ObjectId>
+    <table id="42" parent="21" name="image">
+      <ObjectId>17104</ObjectId>
       <Owner>lefumier</Owner>
-      <StateNumber>1644</StateNumber>
+      <StateNumber>1884</StateNumber>
     </table>
-    <table id="42" parent="20" name="product">
-      <ObjectId>16734</ObjectId>
+    <table id="43" parent="21" name="product">
+      <ObjectId>17110</ObjectId>
       <Owner>lefumier</Owner>
-      <StateNumber>1644</StateNumber>
+      <StateNumber>1884</StateNumber>
     </table>
-    <table id="43" parent="20" name="product_color">
-      <ObjectId>16742</ObjectId>
+    <table id="44" parent="21" name="users">
+      <ObjectId>17118</ObjectId>
       <Owner>lefumier</Owner>
-      <StateNumber>1644</StateNumber>
+      <StateNumber>1884</StateNumber>
     </table>
-    <table id="44" parent="20" name="user">
-      <ObjectId>16749</ObjectId>
-      <Owner>lefumier</Owner>
-      <StateNumber>1649</StateNumber>
-    </table>
-    <column id="45" parent="38" name="id">
+    <column id="45" parent="39" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1644</StateNumber>
+      <StateNumber>1884</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="46" parent="38" name="name">
+    <column id="46" parent="39" name="product_id">
       <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1884</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="47" parent="39" name="color">
+      <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1644</StateNumber>
+      <StateNumber>1884</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="47" parent="38" name="color_pkey">
-      <ObjectId>16721</ObjectId>
-      <StateNumber>1644</StateNumber>
+    <index id="48" parent="39" name="color_pkey">
+      <ObjectId>17096</ObjectId>
+      <StateNumber>1884</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="48" parent="38" name="color_pkey">
-      <ObjectId>16722</ObjectId>
-      <StateNumber>1644</StateNumber>
+    <index id="49" parent="39" name="idx_665648e94584665a">
+      <ObjectId>17098</ObjectId>
+      <StateNumber>1884</StateNumber>
+      <ColNames>product_id</ColNames>
+    </index>
+    <key id="50" parent="39" name="color_pkey">
+      <ObjectId>17097</ObjectId>
+      <StateNumber>1884</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>color_pkey</UnderlyingIndexName>
     </key>
-    <column id="49" parent="39" name="id">
+    <foreign-key id="51" parent="39" name="fk_665648e94584665a">
+      <ObjectId>17128</ObjectId>
+      <StateNumber>1884</StateNumber>
+      <ColNames>product_id</ColNames>
+      <RefTableId>17110</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>product</RefTableName>
+      <RefKeyName>product_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="52" parent="40" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1644</StateNumber>
+      <StateNumber>1884</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="50" parent="39" name="name">
+    <column id="53" parent="40" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1644</StateNumber>
+      <StateNumber>1884</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="51" parent="39" name="customer_pkey">
-      <ObjectId>16726</ObjectId>
-      <StateNumber>1644</StateNumber>
+    <column id="54" parent="40" name="created_at">
+      <Position>3</Position>
+      <DataType>timestamp(0)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1884</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="55" parent="40" name="customer_pkey">
+      <ObjectId>17102</ObjectId>
+      <StateNumber>1884</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="52" parent="39" name="customer_pkey">
-      <ObjectId>16727</ObjectId>
-      <StateNumber>1644</StateNumber>
+    <key id="56" parent="40" name="customer_pkey">
+      <ObjectId>17103</ObjectId>
+      <StateNumber>1884</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>customer_pkey</UnderlyingIndexName>
     </key>
-    <column id="53" parent="40" name="version">
+    <column id="57" parent="41" name="version">
       <Position>1</Position>
       <DataType>varchar(191)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1643</StateNumber>
+      <StateNumber>1883</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="54" parent="40" name="executed_at">
+    <column id="58" parent="41" name="executed_at">
       <Position>2</Position>
       <DataType>timestamp(0)|0s</DataType>
-      <StateNumber>1643</StateNumber>
+      <StateNumber>1883</StateNumber>
       <DefaultExpression>NULL::timestamp without time zone</DefaultExpression>
       <TypeId>1114</TypeId>
     </column>
-    <column id="55" parent="40" name="execution_time">
+    <column id="59" parent="41" name="execution_time">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>1643</StateNumber>
+      <StateNumber>1883</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="56" parent="40" name="doctrine_migration_versions_pkey">
-      <ObjectId>16706</ObjectId>
-      <StateNumber>1643</StateNumber>
+    <index id="60" parent="41" name="doctrine_migration_versions_pkey">
+      <ObjectId>17081</ObjectId>
+      <StateNumber>1883</StateNumber>
       <ColNames>version</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="57" parent="40" name="doctrine_migration_versions_pkey">
-      <ObjectId>16707</ObjectId>
-      <StateNumber>1643</StateNumber>
+    <key id="61" parent="41" name="doctrine_migration_versions_pkey">
+      <ObjectId>17082</ObjectId>
+      <StateNumber>1883</StateNumber>
       <ColNames>version</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>doctrine_migration_versions_pkey</UnderlyingIndexName>
     </key>
-    <column id="58" parent="41" name="id">
+    <column id="62" parent="42" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1644</StateNumber>
+      <StateNumber>1884</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="59" parent="41" name="product_image_id_id">
+    <column id="63" parent="42" name="product_id">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>1644</StateNumber>
+      <NotNull>1</NotNull>
+      <StateNumber>1884</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="60" parent="41" name="image_name">
+    <column id="64" parent="42" name="image_name">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1644</StateNumber>
+      <StateNumber>1884</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="61" parent="41" name="image_pkey">
-      <ObjectId>16731</ObjectId>
-      <StateNumber>1644</StateNumber>
+    <index id="65" parent="42" name="image_pkey">
+      <ObjectId>17107</ObjectId>
+      <StateNumber>1884</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <index id="62" parent="41" name="idx_c53d045fc42e84e1">
-      <ObjectId>16733</ObjectId>
-      <StateNumber>1644</StateNumber>
-      <ColNames>product_image_id_id</ColNames>
+    <index id="66" parent="42" name="idx_c53d045f4584665a">
+      <ObjectId>17109</ObjectId>
+      <StateNumber>1884</StateNumber>
+      <ColNames>product_id</ColNames>
     </index>
-    <key id="63" parent="41" name="image_pkey">
-      <ObjectId>16732</ObjectId>
-      <StateNumber>1644</StateNumber>
+    <key id="67" parent="42" name="image_pkey">
+      <ObjectId>17108</ObjectId>
+      <StateNumber>1884</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>image_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="64" parent="41" name="fk_c53d045fc42e84e1">
-      <ObjectId>16759</ObjectId>
-      <StateNumber>1644</StateNumber>
-      <ColNames>product_image_id_id</ColNames>
-      <RefTableId>16734</RefTableId>
+    <foreign-key id="68" parent="42" name="fk_c53d045f4584665a">
+      <ObjectId>17133</ObjectId>
+      <StateNumber>1884</StateNumber>
+      <ColNames>product_id</ColNames>
+      <RefTableId>17110</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>product</RefTableName>
       <RefKeyName>product_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="65" parent="42" name="id">
+    <column id="69" parent="43" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1644</StateNumber>
+      <StateNumber>1884</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="66" parent="42" name="brand">
+    <column id="70" parent="43" name="brand">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1644</StateNumber>
+      <StateNumber>1884</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="67" parent="42" name="description">
+    <column id="71" parent="43" name="name">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1644</StateNumber>
+      <StateNumber>1884</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="68" parent="42" name="name">
+    <column id="72" parent="43" name="description">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1644</StateNumber>
+      <StateNumber>1884</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="69" parent="42" name="product_pkey">
-      <ObjectId>16740</ObjectId>
-      <StateNumber>1644</StateNumber>
+    <column id="73" parent="43" name="price">
+      <Position>5</Position>
+      <DataType>double precision|0s</DataType>
+      <StateNumber>1884</StateNumber>
+      <TypeId>701</TypeId>
+    </column>
+    <index id="74" parent="43" name="product_pkey">
+      <ObjectId>17116</ObjectId>
+      <StateNumber>1884</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="70" parent="42" name="product_pkey">
-      <ObjectId>16741</ObjectId>
-      <StateNumber>1644</StateNumber>
+    <key id="75" parent="43" name="product_pkey">
+      <ObjectId>17117</ObjectId>
+      <StateNumber>1884</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>product_pkey</UnderlyingIndexName>
     </key>
-    <column id="71" parent="43" name="product_id">
+    <column id="76" parent="44" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1644</StateNumber>
+      <StateNumber>1884</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="72" parent="43" name="color_id">
+    <column id="77" parent="44" name="customer_id">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1644</StateNumber>
+      <StateNumber>1884</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="73" parent="43" name="product_color_pkey">
-      <ObjectId>16745</ObjectId>
-      <StateNumber>1644</StateNumber>
-      <ColNames>product_id
-color_id</ColNames>
-      <Unique>1</Unique>
-      <Primary>1</Primary>
-    </index>
-    <index id="74" parent="43" name="idx_c70a33b54584665a">
-      <ObjectId>16747</ObjectId>
-      <StateNumber>1644</StateNumber>
-      <ColNames>product_id</ColNames>
-    </index>
-    <index id="75" parent="43" name="idx_c70a33b57ada1fb5">
-      <ObjectId>16748</ObjectId>
-      <StateNumber>1644</StateNumber>
-      <ColNames>color_id</ColNames>
-    </index>
-    <key id="76" parent="43" name="product_color_pkey">
-      <ObjectId>16746</ObjectId>
-      <StateNumber>1644</StateNumber>
-      <ColNames>product_id
-color_id</ColNames>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>product_color_pkey</UnderlyingIndexName>
-    </key>
-    <foreign-key id="77" parent="43" name="fk_c70a33b54584665a">
-      <ObjectId>16764</ObjectId>
-      <StateNumber>1644</StateNumber>
-      <ColNames>product_id</ColNames>
-      <RefTableId>16734</RefTableId>
-      <RefColPositions>1</RefColPositions>
-      <RefTableName>product</RefTableName>
-      <RefKeyName>product_pkey</RefKeyName>
-      <RefColNames>id</RefColNames>
-      <OnDelete>cascade</OnDelete>
-    </foreign-key>
-    <foreign-key id="78" parent="43" name="fk_c70a33b57ada1fb5">
-      <ObjectId>16769</ObjectId>
-      <StateNumber>1644</StateNumber>
-      <ColNames>color_id</ColNames>
-      <RefTableId>16718</RefTableId>
-      <RefColPositions>1</RefColPositions>
-      <RefTableName>color</RefTableName>
-      <RefKeyName>color_pkey</RefKeyName>
-      <RefColNames>id</RefColNames>
-      <OnDelete>cascade</OnDelete>
-    </foreign-key>
-    <column id="79" parent="44" name="id">
-      <Position>1</Position>
-      <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1644</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="80" parent="44" name="customer_id">
-      <Position>2</Position>
-      <DataType>integer|0s</DataType>
-      <StateNumber>1644</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="81" parent="44" name="email">
+    <column id="78" parent="44" name="email">
       <Position>3</Position>
       <DataType>varchar(180)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1644</StateNumber>
+      <StateNumber>1884</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="82" parent="44" name="roles">
+    <column id="79" parent="44" name="roles">
       <Position>4</Position>
       <DataType>json|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1644</StateNumber>
+      <StateNumber>1884</StateNumber>
       <TypeId>114</TypeId>
     </column>
-    <column id="83" parent="44" name="password">
+    <column id="80" parent="44" name="password">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1644</StateNumber>
+      <StateNumber>1884</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="84" parent="44" name="firstname">
+    <column id="81" parent="44" name="firstname">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1649</StateNumber>
+      <StateNumber>1884</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="85" parent="44" name="lastname">
+    <column id="82" parent="44" name="lastname">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1649</StateNumber>
+      <StateNumber>1884</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="86" parent="44" name="created_at">
-      <Position>8</Position>
-      <DataType>timestamp(0)|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1649</StateNumber>
-      <TypeId>1114</TypeId>
-    </column>
-    <index id="87" parent="44" name="user_pkey">
-      <ObjectId>16755</ObjectId>
-      <StateNumber>1644</StateNumber>
+    <index id="83" parent="44" name="users_pkey">
+      <ObjectId>17124</ObjectId>
+      <StateNumber>1884</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <index id="88" parent="44" name="uniq_8d93d649e7927c74">
-      <ObjectId>16757</ObjectId>
-      <StateNumber>1644</StateNumber>
+    <index id="84" parent="44" name="uniq_1483a5e9e7927c74">
+      <ObjectId>17126</ObjectId>
+      <StateNumber>1884</StateNumber>
       <ColNames>email</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="89" parent="44" name="idx_8d93d6499395c3f3">
-      <ObjectId>16758</ObjectId>
-      <StateNumber>1644</StateNumber>
+    <index id="85" parent="44" name="idx_1483a5e99395c3f3">
+      <ObjectId>17127</ObjectId>
+      <StateNumber>1884</StateNumber>
       <ColNames>customer_id</ColNames>
     </index>
-    <key id="90" parent="44" name="user_pkey">
-      <ObjectId>16756</ObjectId>
-      <StateNumber>1644</StateNumber>
+    <key id="86" parent="44" name="users_pkey">
+      <ObjectId>17125</ObjectId>
+      <StateNumber>1884</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
-      <UnderlyingIndexName>user_pkey</UnderlyingIndexName>
+      <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="91" parent="44" name="fk_8d93d6499395c3f3">
-      <ObjectId>16774</ObjectId>
-      <StateNumber>1644</StateNumber>
+    <foreign-key id="87" parent="44" name="fk_1483a5e99395c3f3">
+      <ObjectId>17138</ObjectId>
+      <StateNumber>1884</StateNumber>
       <ColNames>customer_id</ColNames>
-      <RefTableId>16723</RefTableId>
+      <RefTableId>17099</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>customer</RefTableName>
       <RefKeyName>customer_pkey</RefKeyName>

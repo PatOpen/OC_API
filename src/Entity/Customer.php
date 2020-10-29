@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\CustomerRepository;
 use DateTime;
 use DateTimeInterface;
@@ -11,6 +12,21 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
+ * @ApiResource(
+ *     normalizationContext={"groups"={"customers:read"}},
+ *     denormalizationContext={"groups"={"customers:write"}},
+ *     collectionOperations={
+ *          "GET"={},
+ *          "customers_all_users"={
+ *              "method"="GET",
+ *              "path"="/customers/{id}/users",
+ *              "controller"="App\Controller\Api\CustomerAllUsers"
+ *     }
+ *     },
+ *     itemOperations={
+ *           "GET"={}
+ *     }
+ * )
  * @ORM\Entity(repositoryClass=CustomerRepository::class)
  */
 class Customer
@@ -19,22 +35,25 @@ class Customer
 	 * @ORM\Id
 	 * @ORM\GeneratedValue
 	 * @ORM\Column(type="integer")
+	 * @Groups({"customers:read"})
 	 */
 	private ?int $id;
 
 	/**
 	 * @ORM\Column(type="string", length=255)
-	 * @Groups({"users:read"})
+	 * @Groups({"users:read", "customers:read"})
 	 */
 	private ?string $name;
 
 	/**
 	 * @ORM\Column(type="datetime")
+	 * @Groups({"customers:read"})
 	 */
 	private DateTime $createdAt;
 
 	/**
 	 * @ORM\OneToMany(targetEntity=Users::class, mappedBy="customer", orphanRemoval=true, cascade={"persist", "remove"})
+	 * @Groups({"customers:read"})
 	 */
 	private Collection $user;
 
